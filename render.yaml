@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: frank-base-toolkit
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install --legacy-peer-deps
+    startCommand: node server.js
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.2
